@@ -2,9 +2,10 @@
   "name": "react-super-accordion",
   "version": "1.0.0",
   "description": "A hackable super simple accordion component for react. Completely customisable to the core.",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "build": "babel -o dist/build.js index.js"
+    "build": "babel --delete-dir-on-start -d dist src",
+    "prepublish": "npm run build"
   },
   "repository": "https://github.com/master-atul/react-super-accordion.git",
   "author": "Atul R <atulanand94@gmail.com>",
