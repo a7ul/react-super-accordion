@@ -3,11 +3,17 @@ import PropTypes from 'prop-types';
 import * as styles from './style';
 
 const HeadText = (props) => {
-  const { toggle, ...extraProps } = props;
+  const {
+    toggle, text, expanded, ...extraProps
+  } = props;
   return (
-    <div style={styles.container} {...extraProps}>
-      <button onClick={() => toggle()}>CLICK</button>
-      {props.text}
+    <div onClick={() => toggle()} style={styles.container} {...extraProps}>
+      <div style={styles.title}>
+        {text}
+      </div>
+      <div style={expanded ? styles.sideArrowExpanded : styles.sideArrow}>
+        ⌃
+      </div>
     </div>
   );
 };

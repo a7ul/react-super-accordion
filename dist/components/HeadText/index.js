@@ -21,15 +21,20 @@ function _objectWithoutProperties(source, excluded) { if (source == null) return
 
 var HeadText = function HeadText(props) {
   var toggle = props.toggle,
-      extraProps = _objectWithoutProperties(props, ["toggle"]);
+      text = props.text,
+      expanded = props.expanded,
+      extraProps = _objectWithoutProperties(props, ["toggle", "text", "expanded"]);
 
   return _react.default.createElement("div", _extends({
-    style: styles.container
-  }, extraProps), _react.default.createElement("button", {
     onClick: function onClick() {
       return toggle();
-    }
-  }, "CLICK"), props.text);
+    },
+    style: styles.container
+  }, extraProps), _react.default.createElement("div", {
+    style: styles.title
+  }, text), _react.default.createElement("div", {
+    style: expanded ? styles.sideArrowExpanded : styles.sideArrow
+  }, "\u2303"));
 };
 
 HeadText.defaultProps = {
