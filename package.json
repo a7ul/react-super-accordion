@@ -1,6 +1,6 @@
 {
   "name": "react-super-accordion",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "A hackable super simple accordion component for react. Completely customisable to the core.",
   "main": "dist/index.js",
   "scripts": {
